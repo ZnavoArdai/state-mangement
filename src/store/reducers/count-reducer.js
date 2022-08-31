@@ -3,11 +3,13 @@ import { ACTION } from "../actions/count-action";
 
     switch(type){
   case ACTION.UP:
-    return {count:stste.count+1}
+    return {...stste,count:stste.count+1}
     case ACTION.DOWN:
-    return {count:stste.count-1}
+    return {...stste,count:stste.count-1}
     case ACTION.REST:
-    return {count:0};
+    return {...stste,count:0};
+    case ACTION.INPUT:
+        return {...stste,input:payload};
     default:
       throw new Error();
     }
